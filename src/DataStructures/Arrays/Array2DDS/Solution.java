@@ -15,21 +15,23 @@ class Result {
      */
 
     public static int hourglassSum(List<List<Integer>> arr) {
-        List<Integer> sumList = new LinkedList<>();
+        Integer maxSum = Integer.MIN_VALUE;
 
         for (int i = 1; i < arr.size() - 1; i++) {
-            List<Integer> line = arr.get(i);
-            for (int j = 1; j < line.size() - 1; j++) {
-                Integer sum = line.get(j);
-                for (int x = j - 1; x <= j + 1; x++) {
-                    sum += arr.get(i - 1).get(x);
-                    sum += arr.get(i + 1).get(x);
-                }
-                sumList.add(sum);
+            for (int j = 1; j < arr.get(i).size() - 1; j++) {
+                Integer sum = 0;
+
+                sum += arr.get(i - 1).get(j - 1); // top lef
+                sum += arr.get(i - 1).get(j); // top middle
+                sum += arr.get(i - 1).get(j + 1); // top right
+                sum += arr.get(i).get(j); // current
+                sum += arr.get(i + 1).get(j - 1); // bottom lef
+                sum += arr.get(i + 1).get(j); // bottom middle
+                sum += arr.get(i + 1).get(j + 1); // bottom right
+
+                maxSum = Math.max(sum, maxSum);
             }
         }
-
-        Integer maxSum = sumList.stream().max(Integer::compare).get();
 
         return maxSum;
     }
