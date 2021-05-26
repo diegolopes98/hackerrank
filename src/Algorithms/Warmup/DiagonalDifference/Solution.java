@@ -44,7 +44,7 @@ public class Solution {
 
         IntStream.range(0, n).forEach(i -> {
             arr.add(
-                    Stream.of(in.next().replaceAll("\\s+$", "").split(" "))
+                    Stream.of(in.nextLine().replaceAll("\\s+$", "").split(" "))
                             .map(Integer::parseInt)
                             .collect(Collectors.toList())
             );

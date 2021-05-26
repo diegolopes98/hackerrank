@@ -33,7 +33,7 @@ public class Solution {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        List<Integer> arr = Stream.of(in.next().replaceAll("\\s+$", "").split(" "))
+        List<Integer> arr = Stream.of(in.nextLine().replaceAll("\\s+$", "").split(" "))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 

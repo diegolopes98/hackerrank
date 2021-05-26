@@ -40,7 +40,7 @@ public class Solution {
 
         int candlesCount = in.nextInt();
 
-        List<Integer> candles = Stream.of(in.next().replaceAll("\\s+$", "").split(" "))
+        List<Integer> candles = Stream.of(in.nextLine().replaceAll("\\s+$", "").split(" "))
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
 

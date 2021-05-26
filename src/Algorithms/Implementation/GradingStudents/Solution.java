@@ -32,9 +32,9 @@ public class Solution {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        int gradesCount = Integer.parseInt(in.next().trim());
+        int gradesCount = Integer.parseInt(in.nextLine().trim());
 
-        List<Integer> grades = IntStream.range(0, gradesCount).mapToObj(i -> in.next().replaceAll("\\s+$", ""))
+        List<Integer> grades = IntStream.range(0, gradesCount).mapToObj(i -> in.nextLine().replaceAll("\\s+$", ""))
                 .map(String::trim)
                 .map(Integer::parseInt)
                 .collect(Collectors.toList());
